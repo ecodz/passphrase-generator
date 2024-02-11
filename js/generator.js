@@ -6,7 +6,11 @@ const special = "!();:-#+="
 function secureRandom(length) {
     var array = new Uint8Array(length);
     var res = new Float32Array(length);
-    window.crypto.getRandomValues(array);
+    try {
+        window.crypto.getRandomValues(array);
+    } catch (error) {
+        alert("no.\n" + error)
+    }
     for (let i = 0; i < array.length; i++) {
         if (array[i] % 0xff === 0) {
             array[i] = 0xfe;
@@ -51,8 +55,8 @@ function makeUpWord(length, random) {
 }
 
 export function generatePassword(options) {
-    const words = options["words"] || 6
-    const wordLength = options["wordLength"] || 4
+    const words = Math.ceil(options["words"]) || 6
+    const wordLength = Math.ceil(options["wordLength"]) || 4
     const includeNumber = options["includeNumber"] || false
     const includeSpecial = options["includeSpecial"] || false
 
