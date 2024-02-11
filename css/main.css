@@ -1,5 +1,6 @@
 @import url("./colors.css");
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@700&display=swap'); /* TODO: local fonts */
+@import url('./font-inter.css');
+@import url('./font-poppins.css');
 
 body {
     background-color: var(--base);
