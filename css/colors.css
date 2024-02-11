@@ -1,0 +1,21 @@
+body {
+    --base: #1e1e2e;
+    --surface-0: #313244;
+    --surface-1: #45475a;
+    --text: #cdd6f4;
+    --blue: #89b4fa;
+    --mauve: #cba6f7;
+    --crust: #11111b;
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        --base: #eff1f5;
+        --surface-0: #ccd0da;
+        --surface-1: #bcc0cc;
+        --text: #4c4f69;
+        --blue: #1e66f5;
+        --mauve: #8839ef;
+        --crust: #dce0e8;
+    }
+}

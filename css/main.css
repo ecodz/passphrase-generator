@@ -1,0 +1,142 @@
+@import url("./colors.css");
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@700&display=swap'); /* TODO: local fonts */
+
+body {
+    background-color: var(--base);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    margin: 1rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.password {
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    padding: 1.2rem;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.password span:nth-child(odd) {
+    color: var(--blue);
+}
+
+.password span:nth-child(even) {
+    color: var(--mauve);
+}
+
+.options {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 100%;
+}
+
+.options label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    align-items: center;
+}
+
+.number-input {
+    border: 0;
+    background-color: var(--surface-0);
+    padding: 0.5rem;
+    color: var(--text);
+    border-radius: 0.5rem;
+    width: 6ch;
+    font-size: 1.2rem;
+    transition: background-color 250ms, transform 250ms;
+    font-family: 'Inter', sans-serif;
+}
+
+.number-input:hover {
+    background-color: var(--surface-1);
+}
+
+.number-input:active {
+    transform: scale(0.95);
+}
+
+.checkbox {
+    background-color: var(--surface-0);
+    border: 0;
+    font-size: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    appearance: none;
+    border-radius: 0.5rem;
+    transition: background-color 250ms, transform 250ms;
+}
+
+.checkbox:hover {
+    background-color: var(--surface-1);
+}
+
+.checkbox:checked {
+    background-color: var(--mauve);
+    background-image: url("../assets/check.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checkbox:active {
+    transform: scale(0.95);
+}
+
+.buttons {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.button {
+    font-size: 1.2rem;
+    background-color: var(--surface-0);
+    border: 0;
+    padding: 0.8rem;
+    color: var(--text);
+    border-radius: 0.6rem;
+    transition: background-color 250ms, transform 250ms;
+    font-family: 'Inter', sans-serif;
+}
+
+.button:hover {
+    background-color: var(--surface-1);
+    transform: scale(1.05);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+#generate {
+    background-color: var(--mauve);
+    color: var(--crust);
+}

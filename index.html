@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Passphrase Generator</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <main>
+        <h1>Pseudo Passphrase Generator</h1>
+        <p class="password" id="password"><span><br></span></p>
+        <h2>Options</h2>
+        <div class="options">
+            <label for="word-amount">
+                Words 
+                <input type="number" name="Words" id="word-amount" value="4" class="number-input">
+            </label>
+            <label for="word-length">
+                Word Length 
+                <input type="number" name="Word Length" id="word-length" value="4" class="number-input">
+            </label>
+            <label for="include-numbers">
+                Include Number 
+                <input type="checkbox" name="Include Numbers" id="include-numbers" class="checkbox">
+            </label>
+            <label for="include-special">
+                Include Special 
+                <input type="checkbox" name="Include Special" id="include-special" class="checkbox">
+            </label>
+        </div>
+        <div class="buttons">
+            <button id="generate" class="button">Generate</button>
+            <button id="copy" class="button">Copy</button>
+        </div>
+    </main>
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
