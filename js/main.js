@@ -62,7 +62,7 @@ function displayEntropy() {
     }
     entropyValue.innerText = Math.floor(currentEntropy)
     passwordQuality.innerText = quality
-    entropyBar.style.width = `${currentEntropy / 1.5}%`
+    entropyBar.style.width = `${currentEntropy / 1.5}%` || "100%"
     entropyBar.style.backgroundColor = `var(--${color})`
 }
 

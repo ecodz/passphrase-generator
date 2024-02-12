@@ -6,11 +6,7 @@ const special = "!();:-#+="
 function secureRandom(length) {
     var array = new Uint8Array(length);
     var res = new Float32Array(length);
-    try {
-        window.crypto.getRandomValues(array);
-    } catch (error) {
-        alert("no.\n" + error)
-    }
+    window.crypto.getRandomValues(array);
     for (let i = 0; i < array.length; i++) {
         if (array[i] % 0xff === 0) {
             array[i] = 0xfe;
@@ -62,6 +58,7 @@ export function generatePassword(options) {
     const wordLength = Math.ceil(options["wordLength"]) || 4
     const includeNumber = options["includeNumber"] || false
     const includeSpecial = options["includeSpecial"] || false
+    if(words > 255 || wordLength > 255) return [["", "Please enter a lower value."], 0]
 
     const totalWordChars = words * wordLength
     const extraChars = 2
