@@ -5,6 +5,10 @@ body {
     --text: #cdd6f4;
     --blue: #89b4fa;
     --mauve: #cba6f7;
+    --red: #f38ba8;
+    --peach: #fab387;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
     --crust: #11111b;
 }
 
@@ -16,6 +20,10 @@ body {
         --text: #4c4f69;
         --blue: #1e66f5;
         --mauve: #8839ef;
+        --red: #d20f39;
+        --peach: #fe640b;
+        --green: #40a02b;
+        --teal: #179299;
         --crust: #dce0e8;
     }
 }

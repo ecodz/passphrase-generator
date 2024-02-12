@@ -47,11 +47,14 @@ function pickRandom(chars, random) {
 
 function makeUpWord(length, random) {
     let result = ""
+    let combinations = []
     for (let i = 0; i < length; i++) {
         const chars = getNextAllowedChars(result)
+        combinations.push(chars.length)
         result += pickRandom(chars, random[i])
     }
-    return result
+    combinations = combinations.reduce(function(product, value) { return product * value; })
+    return [result, combinations]
 }
 
 export function generatePassword(options) {
@@ -65,15 +68,27 @@ export function generatePassword(options) {
     const random = secureRandom(totalWordChars + extraChars)
 
     let result = [];
+    let combinations = []
 
     for (let i = 0; i < words; i++) {
-        result.push(makeUpWord(wordLength, random.slice(i*wordLength, i*wordLength+wordLength)))
+        const word = makeUpWord(wordLength, random.slice(i*wordLength, i*wordLength+wordLength))
+        result.push(word[0])
+        combinations.push(word[1])
     }
 
     let extra = ""
-    if (includeNumber) extra += pickRandom(numbers, random[totalWordChars])
-    if (includeSpecial) extra += pickRandom(special, random[totalWordChars + 1])
-    if (extra) result.push(extra)
+    if (includeNumber) {
+        extra += pickRandom(numbers, random[totalWordChars]);
+        combinations.push(numbers.length);
+    } 
+    if (includeSpecial) {
+        extra += pickRandom(special, random[totalWordChars + 1]);
+        combinations.push(special.length);
+    } 
+    if (extra) result.push(extra);
 
-    return result
+    combinations = combinations.reduce(function(product, value) { return product * value; })
+
+    const entropy = Math.log2(combinations)
+    return [result, entropy]
 }

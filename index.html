@@ -10,11 +10,17 @@
     <main>
         <h1>Pseudo Passphrase Generator</h1>
         <p class="password" id="password"><span><br></span></p>
+        <div id="entropy-info">
+            <span>Password Quality: <span id="password-quality"></span>, Entropy: <span id="entropy-value"></span> bits</span>
+            <div class="meter" id="entropy-meter">
+                <div class="meter-bar" id="entropy-bar"></div>
+            </div>
+        </div>
         <h2>Options</h2>
         <div class="options">
             <label for="word-amount">
                 Words 
-                <input type="number" name="Words" id="word-amount" value="4" min="2" max="256" step="1" class="number-input">
+                <input type="number" name="Words" id="word-amount" value="6" min="2" max="256" step="1" class="number-input">
             </label>
             <label for="word-length">
                 Word Length 
